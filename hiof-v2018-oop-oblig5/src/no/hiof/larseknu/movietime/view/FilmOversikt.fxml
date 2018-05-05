@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="536.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.hiof.larseknu.movietime.controller.FilmOversiktController">
+   <center>
+      <AnchorPane prefHeight="390.0" prefWidth="308.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="tittelText" layoutX="28.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tittel" wrappingWidth="282.4716796875" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="2.37646484375">
+               <font>
+                  <Font name="Book Antiqua Bold" size="31.0" />
+               </font>
+            </Text>
+            <VBox layoutX="28.0" layoutY="93.0" prefHeight="366.0" prefWidth="327.0" spacing="5.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="93.0">
+               <children>
+                  <Label text="Beskrivelse">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextArea fx:id="beskrivelseTextArea" editable="false" minHeight="108.0" prefHeight="168.0" prefWidth="216.0" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextArea>
+                  <Label text="Utgivelsesdato">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="utgivelsesdatoTextField" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Label text="Spilletid">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="spilletidTextField" editable="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <ImageView fx:id="filmposter" fitHeight="285.0" fitWidth="156.0" layoutX="394.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <ListView fx:id="filmListView" maxHeight="509.0" prefHeight="509.0" prefWidth="255.0">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></ListView>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="36.0" prefWidth="838.0" BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar layoutX="241.0" layoutY="6.0" prefHeight="28.0" prefWidth="229.0">
+              <buttons>
+                  <Button fx:id="slettButton" mnemonicParsing="false" onAction="#slettButtonClicked" text="Slett" />
+                  <Button fx:id="redigerButton" mnemonicParsing="false" text="Rediger" />
+                  <Button fx:id="nyButton" mnemonicParsing="false" onAction="#nyButtonClicked" text="Ny" />
+              </buttons>
+            </ButtonBar>
+            <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#sorterTittelAZ" text="A-Z" />
+            <Button layoutX="59.0" layoutY="6.0" mnemonicParsing="false" onAction="#sorterTittelZA" text="Z-A" />
+            <Button layoutX="190.0" layoutY="6.0" mnemonicParsing="false" onAction="#sorterUtgivelsesdatoStigende" text="Eldste" />
+            <Button layoutX="129.0" layoutY="6.0" mnemonicParsing="false" onAction="#sorterUtgivelsesdatoSynkende" text="Nyeste" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

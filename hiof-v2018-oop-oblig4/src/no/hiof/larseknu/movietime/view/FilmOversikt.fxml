@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="421.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.hiof.larseknu.movietime.controller.FilmOversiktController">
+   <children>
+      <Pane layoutX="92.0" layoutY="29.0" prefHeight="378.0" prefWidth="290.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="359.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Label layoutX="19.0" layoutY="130.0" text="Beskrivelse">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="66.0" text="Utgivelsedato">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="95.0" text="Spilletid">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="uiUtgivelsesdato" editable="false" layoutX="122.0" layoutY="64.0" />
+            <TextField fx:id="uiSpilletid" editable="false" layoutX="122.0" layoutY="93.0" />
+            <TextArea fx:id="uiBeskrivelse" editable="false" layoutX="19.0" layoutY="157.0" prefHeight="90.0" prefWidth="252.0" />
+            <TextField fx:id="uiTittel" layoutX="22.0" layoutY="14.0" prefHeight="37.0" prefWidth="252.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children></Pane>
+      <Button layoutX="359.0" layoutY="383.0" mnemonicParsing="false" onAction="#lagNyFilm" text="Ny" AnchorPane.bottomAnchor="13.0" />
+      <Button layoutX="400.0" layoutY="383.0" mnemonicParsing="false" text="Rediger" AnchorPane.bottomAnchor="13.0" />
+      <Button layoutX="464.0" layoutY="383.0" mnemonicParsing="false" onAction="#uiSlettKnapp" text="Slett" AnchorPane.bottomAnchor="13.0" />
+      <ListView fx:id="uiFilmListe" layoutX="14.0" layoutY="14.0" prefHeight="411.0" prefWidth="345.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="304.0" AnchorPane.topAnchor="5.0" />
+   </children>
+</AnchorPane>
